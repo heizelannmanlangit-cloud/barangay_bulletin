@@ -1,17 +1,23 @@
-# barangay_bulletin
+# Barangay Bulletin
 
-A new Flutter project.
+An offline-first community board for a barangay. Residents can post announcements,
+log community/infrastructure issues, track their status, and manage archived
+(soft-deleted) entries — all without internet. Built with Flutter + Hive.
 
-## Getting Started
+## Features
+- Announcements: create, edit, pin, soft-delete, filter by category
+- Reports: create, edit, change status, soft-delete, filter by status + category
+- Archive: restore or permanently delete soft-deleted items
+- All data stored locally with Hive (works fully offline)
 
-This project is a starting point for a Flutter application.
+## Setup
+1. Get the packages:
+   flutter pub get
+2. Generate the Hive adapters:
+   dart run build_runner build --delete-conflicting-outputs
+3. Run the app:
+   flutter run
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Known limitations
+- Filter chips are styled buttons (function are the same tho).
+- Archive "All" view lists announcements first, then reports (not mixed by date).
